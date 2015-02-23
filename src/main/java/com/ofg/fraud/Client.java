@@ -5,6 +5,15 @@ public class Client {
     private String firstname;
     private String surname;
     private String job;
+    private String age;
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
 
     public String getFirstname() {
         return firstname;
