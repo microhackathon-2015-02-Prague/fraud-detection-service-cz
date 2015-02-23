@@ -176,7 +176,7 @@ if(project.hasProperty("coverage")) {
 //    stubsOutputDir = wiremockStubsOutputDir
 //}
 
-generateAccurest.dependsOn generateWiremockClientStubs
+//generateAccurest.dependsOn generateWiremockClientStubs
 
 task addHashFile << {
     String gitCmd = "git log --pretty=format:'%H' -n 1"
@@ -190,11 +190,11 @@ jar {
     from "commitHash.txt"
 }
 
-task stubsJar(type: Jar) {
-    baseName = "${project.name}-stubs"
-    from wiremockStubsOutputDirRoot
-    from "commitHash.txt"
-}
+//task stubsJar(type: Jar) {
+//    baseName = "${project.name}-stubs"
+//    from wiremockStubsOutputDirRoot
+//    from "commitHash.txt"
+//}
 
 bootRepackage {
     withJarTask = "jar"
@@ -216,11 +216,11 @@ publishing {
         }
     }
     publications {
-        stubs(MavenPublication) {
-            groupId='com.ofg'
-            artifactId "${project.name}-stubs"
-            artifact stubsJar
-        }
+//        stubs(MavenPublication) {
+//            groupId='com.ofg'
+//            artifactId "${project.name}-stubs"
+//            artifact stubsJar
+//        }
         mavenJava(MavenPublication) {
             groupId='com.ofg'
             from components.java
