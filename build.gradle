@@ -10,7 +10,7 @@ buildscript {
         classpath "org.springframework.boot:spring-boot-gradle-plugin:1.2.1.RELEASE"
         classpath 'com.ofg:uptodate-gradle-plugin:1.1.0'
         classpath 'se.transmode.gradle:gradle-docker:1.2'
-        classpath 'io.codearte.accurest:accurest-gradle-plugin:0.4.1'
+//        classpath 'io.codearte.accurest:accurest-gradle-plugin:0.4.1'
 
         if(project.hasProperty("coverage")) {
             classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:1.0.2'
@@ -23,7 +23,7 @@ apply plugin: 'spring-boot'
 apply plugin: 'maven-publish'
 apply plugin: 'com.ofg.uptodate'
 apply plugin: 'docker'
-apply plugin: 'accurest'
+//apply plugin: 'accurest'
 
 ext {
     versionPrefix = "CD"
