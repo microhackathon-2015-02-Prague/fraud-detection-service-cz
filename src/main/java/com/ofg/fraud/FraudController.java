@@ -27,7 +27,8 @@ public class FraudController {
     public static final String IN_CONTENT_TYPE = "application/vnd.loan-application-decission-maker.v1+json";
     private static final String CLIENT_SERVICE = "client-service";
     private static final String LOAN_APP_DECISION_MAKER = "loan-application-decission-maker";
-    private static final String CLIENT_URL = "/clients/";;
+    private static final String CLIENT_URL = "/clients/";
+    ;
     private static final String LOAN_APP_URL = "/api/loanApplication/";
 
     @Autowired
@@ -57,8 +58,8 @@ public class FraudController {
                 // call loan-application-decision-maker
                 serviceRestClient.forService(LOAN_APP_DECISION_MAKER)
                         .put()
-                        .onUrl(LOAN_APP_URL+applicationId)
-                        .body(result)
+                        .onUrl(LOAN_APP_URL + applicationId)
+                        .body(new LoanAppDecisionRequest(result, client, request.getClientId()))
                         .ignoringResponse();
             } catch (InterruptedException e) {
                 e.printStackTrace();
