@@ -32,7 +32,7 @@ ext {
     projectGroupId = groupId
 
     jacksonMapper = '1.9.13'
-    contractsDir = file("${project.rootDir}/repository/mappings/com/ofg/twitter-places-analyzer")
+    contractsDir = file("${project.rootDir}/repository/mappings/com/ofg/fraud-detection-service")
     wiremockStubsOutputDirRoot = file("${project.rootDir}/out/production/${project.name}-stubs/")
     wiremockStubsOutputDir = new File(wiremockStubsOutputDirRoot, 'repository/mappings/')
     wiremockStubsOutputDir.mkdirs()
@@ -168,13 +168,13 @@ if(project.hasProperty("coverage")) {
     }
 }
 
-accurest {
-    baseClassForTests = 'com.ofg.twitter.places.accurest.BaseMockMvcSpec'
-    basePackageForTests = 'accurest'
-    contractsDslDir = contractsDir
-    generatedTestSourcesDir = file("${project.rootDir}/src/test/groovy/")
-    stubsOutputDir = wiremockStubsOutputDir
-}
+//accurest {
+//    baseClassForTests = 'com.ofg.twitter.places.accurest.BaseMockMvcSpec'
+//    basePackageForTests = 'accurest'
+//    contractsDslDir = contractsDir
+//    generatedTestSourcesDir = file("${project.rootDir}/src/test/groovy/")
+//    stubsOutputDir = wiremockStubsOutputDir
+//}
 
 generateAccurest.dependsOn generateWiremockClientStubs
 

@@ -1,10 +1,13 @@
 {
-    "pl": {
-        "this": "com/ofg/test-twitter-places-analyzer",
-        "dependencies": {
-            "collerator": {
-                "path": "com/ofg/twitter-places-collerator"
-            }
-        }
+  "cz": {
+    "this": "com/ofg/fraud-detection-service",
+    "dependencies": {
+      "loan-application-decission-maker": {
+        "path": "com/ofg/loan-application-decission-maker"
+      },
+      "client-service": {
+        "path": "com/ofg/client-service"
+      }
     }
+  }
 }
